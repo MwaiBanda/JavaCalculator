@@ -2,6 +2,7 @@ package com.mwaibanda.javaapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,27 +27,53 @@ public class MainActivity extends AppCompatActivity {
 
 
         btnPlus.setOnClickListener(view -> {
-            int num1 = Integer.parseInt(text1.getText().toString());
-            int num2 = Integer.parseInt(text2.getText().toString());
-               resultText.setText(String.format("%d", num1 + num2));
+            if (!text1.getText().toString().isEmpty() && !text2.getText().toString().isEmpty()){
+                   int num1 = Integer.parseInt(text1.getText().toString());
+                   int num2 = Integer.parseInt(text2.getText().toString());
+                   String result = String.format("%d", num1 + num2);
+                   resultText.setText(result);
+                   Intent intent = new Intent(this, ResultActivity.class);
+                   intent.putExtra("result", result);
+                   startActivity(intent);
+               }
+
         });
 
         btnMinus.setOnClickListener(view -> {
-            int num1 = Integer.parseInt(text1.getText().toString());
-            int num2 = Integer.parseInt(text2.getText().toString());
-            resultText.setText(String.format("%d", num1 - num2));
+            if (!text1.getText().toString().isEmpty() && !text2.getText().toString().isEmpty()) {
+                int num1 = Integer.parseInt(text1.getText().toString());
+                int num2 = Integer.parseInt(text2.getText().toString());
+                String result = String.format("%d", num1 - num2);
+                resultText.setText(result);
+                Intent intent = new Intent(this, ResultActivity.class);
+                intent.putExtra("result", result);
+                startActivity(intent);
+
+            }
         });
 
         btnMultiply.setOnClickListener(view -> {
-            int num1 = Integer.parseInt(text1.getText().toString());
-            int num2 = Integer.parseInt(text2.getText().toString());
-            resultText.setText(String.format("%d", num1 * num2));
+            if (!text1.getText().toString().isEmpty() && !text2.getText().toString().isEmpty()) {
+                int num1 = Integer.parseInt(text1.getText().toString());
+                int num2 = Integer.parseInt(text2.getText().toString());
+                String result = String.format("%d", num1 * num2);
+                resultText.setText(result);
+                Intent intent = new Intent(this, ResultActivity.class);
+                intent.putExtra("result", result);
+                startActivity(intent);
+            }
         });
 
         btnDivide.setOnClickListener(view -> {
-            int num1 = Integer.parseInt(text1.getText().toString());
-            int num2 = Integer.parseInt(text2.getText().toString());
-            resultText.setText(String.format("%d", num1 / num2));
+            if (!text1.getText().toString().isEmpty() && !text2.getText().toString().isEmpty()) {
+                int num1 = Integer.parseInt(text1.getText().toString());
+                int num2 = Integer.parseInt(text2.getText().toString());
+                String result = String.format("%d", num1 / num2);
+                resultText.setText(result);
+                Intent intent = new Intent(this, ResultActivity.class);
+                intent.putExtra("result", result);
+                startActivity(intent);
+            }
         });
     }
 }
